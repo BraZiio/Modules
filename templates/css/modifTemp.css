@@ -1,0 +1,36 @@
+.modifTemp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.temp-title {
+    margin-top: 15px;
+    font-size: 70px;
+}
+.temperature {
+    margin-top: 15px;
+    font-size: 25px;
+}
+.temp-input {
+    margin-top: 15px;
+}
+.buttons {
+    margin-top: 15px;
+    border-radius: 25px;
+    font-family: 'Avenir Next';
+    font-size: 1rem;
+    padding: 5px 25px;
+    color: white;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    border: solid 3px transparent;
+    background-color: white;
+    background-origin: border-box;
+    box-shadow: 2px 1000px 1px #007bff inset;
+    transition: .6s;
+}
+.buttons:hover {
+    box-shadow: none;
+    border: solid 3px #007bff;
+    color: #007bff;
+}

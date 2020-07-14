@@ -1,0 +1,63 @@
+.containerModules {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    flex-wrap: wrap;
+}
+.modules {
+    padding: 50px;
+    border: #007bff 3px solid;
+    width: 90%;
+    margin: 15px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: white;
+}
+.containerButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.buttons {
+    margin-top: 10px;
+    border-radius: 25px;
+    font-family: 'Avenir Next';
+    font-size: 1rem;
+    padding: 5px 25px;
+    color: white;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    border: solid 3px transparent;
+    background-color: white;
+    background-origin: border-box;
+    box-shadow: 2px 1000px 1px #007bff inset;
+    transition: .6s;
+}
+.buttons:hover {
+    box-shadow: none;
+    border: solid 3px #007bff;
+    color: #007bff;
+}
+.addModule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (min-width:660px) {
+    .containerModules {
+        flex-direction: row;
+    }
+    .modules {
+        width: 45%;
+    }
+}
+@media screen and (min-width:1160px) {
+    .modules {
+        width: 30%;
+    }
+}
