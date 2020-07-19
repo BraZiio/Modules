@@ -1,10 +1,13 @@
 <link rel="stylesheet" href="templates/css/form.css">
 <?php
 
-if($error==1) {
-    echo"<div class='alert alert-danger erreur' role='alert'>
-            Erreur champ incorrect ou non remplis !
-        </div>";
+if($error!=NULL) {
+    echo"<div class='alert alert-danger erreur' role='alert'>".
+            $error.
+        "</div>";
+}
+else {
+    
 }
 
 ?>

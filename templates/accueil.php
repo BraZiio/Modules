@@ -81,13 +81,45 @@ while ($datas = $answer->fetch())
         <input type="button" class="buttons" id="<?php echo $datas['id']; ?>" onClick=Button(this) value="Supprimer">
     </div>
 </div>
+
+
+
 <?php
 }
 
-$answer->closeCursor(); // Termine le traitement de la requête
+
+?>
+<div class="addModule">
+<input type="submit" class="buttons" name="action" value="Ajouter un module"/>
+</div>
+<?php   
+$answer2 = $bdd->query('SELECT * FROM historical');
+?>
+<?php
+while ($datas2 = $answer2->fetch())
+{
+?>
+
+
+
+<div class="historical">
+        <p>date : <?php echo $datas2['description']; ?></p>
+
+        <?php 
+            if($datas2['success']==0) {
+                echo "Erreur de simulation"; 
+            } else {
+                echo "Success de la simulation"; 
+            }
+}
+
+
+
+
+
+
+
+$answer->closeCursor(); 
+$answer2->closeCursor(); 
 ?>
 </div>
-
-    <div class="addModule">
-        <input type="submit" class="buttons" name="action" value="Ajouter un module"/>
-    </div>

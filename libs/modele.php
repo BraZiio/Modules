@@ -69,4 +69,10 @@ function newTemp($id,$newT) {
 }
 
 
+function addSimulation($id,$today,$sucess) {
+
+	$SQL="INSERT INTO historical(id_module, description, success) VALUES('$id','$today','$sucess')";
+	return SQLInsert($SQL);
+}
+
 ?>

@@ -46,17 +46,21 @@ session_start();
 			case 'Simuler' :
 				$id=$_GET["idButton"];
 				$temperature=$_GET["temperature"];
+				$today = date("Y-m-d");   
 
 				if($temperature==null){
+					addSimulation($id,$today,0);
 					header("Location: index.php?view=simulation&valid=0");
 					exit();  
 				}
 
 				else if($temperature >= 25 || $temperature <= 15) {
+					addSimulation($id,$today,0);
 					header("Location: index.php?view=simulation&valid=0");
 					exit();  
 				} 
 				else{
+					addSimulation($id,$today,1);
 					header("Location: index.php?view=simulation&valid=1");
 					exit();  
 				}
@@ -78,19 +82,37 @@ session_start();
 				$number_of_data_send=$_GET["number_of_data_send"];
 
 				if (isset($name) && (!empty($name)) && (is_string($name))) {
-					if ($number > 0) {
-						if (isset($description) && (!empty($description)) && (strlen($description) < 500 )) {
+					if (isset($description) && (!empty($description)) && (strlen($description) < 500 )){
+						if ($number > 0) {
 							if (isset($type) && (!empty($type)) && (is_string($type))) {
 								if ($number_of_data_send > 0 || $number_of_data_send == null) {
 									addModuleComplet($name, $description, $number, $type, $working_condition, $temperature, $operating_time, $number_of_data_send);
 									header("Location: index.php?view=accueil&error=0");
 									exit();	
+								} 
+								else {
+									$error="nombre de donnée envoyé faux";
 								}
+							} 
+							else {
+								$error = "type faux";
 							}
 						}
+						else {
+							$error="nombre faux";
+						}
 					}
+					else {
+						$error="description fausse";
+					}
+					
 				}
-				header("Location: index.php?view=form&error=1");
+				else {
+					$error="nom faux";
+				}
+
+
+				header("Location: index.php?view=form&error=$error");
 				exit();
 
 				break;
