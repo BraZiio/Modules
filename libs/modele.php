@@ -1,13 +1,3 @@
-<!--
-
-A FAIRE 
-
-formulaire 1 et 2 : redirection ou message erreur si faux 
-formulaire 1 et 2 : voir pour refuser les caractere speciaux
-
-le rendre encore plus beau 
-
--->
 
 
 
@@ -71,7 +61,7 @@ function newTemp($id,$newT) {
 
 function addSimulation($id,$today,$sucess) {
 
-	$SQL="INSERT INTO historical(id_module, description, success) VALUES('$id','$today','$sucess')";
+	$SQL="INSERT INTO historical(description, success) VALUES('$today','$sucess')";
 	return SQLInsert($SQL);
 }
 
